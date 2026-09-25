@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#150f2e" />
+<title>星愿 · 塔罗 — 真机预览</title>
+<style>
+  :root{--gold:#f6c453;--purple:#b18cff;--dim:#b9b0d8;}
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{height:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;
+    background:
+      radial-gradient(circle at 18% 12%,rgba(177,140,255,.18),transparent 46%),
+      radial-gradient(circle at 84% 90%,rgba(246,196,83,.12),transparent 46%),
+      linear-gradient(160deg,#150f2e,#1a1433 55%,#241a45);
+    color:#f4f1ff;
+    min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;
+    padding:30px 16px 44px;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* 星空 */
+  .star{position:fixed;background:#fff;border-radius:50%;opacity:.5;animation:tw 3.2s ease-in-out infinite;pointer-events:none;}
+  @keyframes tw{0%,100%{opacity:.15}50%{opacity:.7}}
+
+  header{text-align:center;margin-bottom:24px;}
+  header .logo{font-size:32px;}
+  header h1{font-size:22px;font-weight:800;letter-spacing:2px;margin-top:6px;}
+  header .sub{font-size:12px;color:var(--dim);letter-spacing:1.5px;margin-top:7px;}
+
+  /* ============ 手机真机框架 ============ */
+  .phone{
+    --w:min(92vw,374px);
+    width:var(--w);
+    aspect-ratio:9/19;
+    position:relative;flex:none;
+    border-radius:54px;
+    background:linear-gradient(160deg,#3a3a43,#14141b 30%,#2a2a33 72%,#4a4a52);
+    box-shadow:0 44px 90px rgba(0,0,0,.6), inset 0 0 0 1px rgba(255,255,255,.07);
+  }
+  /* 侧键 */
+  .phone .side{position:absolute;background:#26262e;border-radius:4px;z-index:3;}
+  .phone .s-l1{left:-3px;top:150px;width:3px;height:62px;}
+  .phone .s-l2{left:-3px;top:226px;width:3px;height:42px;}
+  .phone .s-r1{right:-3px;top:180px;width:3px;height:92px;}
+  /* 屏幕 */
+  .screen{
+    position:absolute;inset:11px;
+    border-radius:44px;overflow:hidden;
+    background:#1a1433;
+    display:flex;flex-direction:column;
+  }
+  /* 灵动岛 */
+  .island{
+    position:absolute;top:10px;left:50%;transform:translateX(-50%);
+    width:104px;height:24px;border-radius:99px;background:#0c0a18;z-index:5;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);
+  }
+  .statusbar{
+    flex:none;height:34px;z-index:4;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:0 22px;font-size:12px;color:#f4f1ff;
+  }
+  .statusbar .time{font-weight:700;font-size:13px;font-variant-numeric:tabular-nums;}
+  .statusbar .icos{font-size:11px;color:#e8e3f8;letter-spacing:1px;}
+  .screen iframe{
+    flex:1;width:100%;border:0;display:block;background:#1a1433;
+  }
+  .homebar{
+    flex:none;height:22px;display:flex;align-items:center;justify-content:center;
+  }
+  .homebar::after{content:"";width:112px;height:4px;border-radius:99px;background:rgba(244,241,255,.5);}
+
+  .caption{margin-top:24px;text-align:center;font-size:12.5px;color:var(--dim);line-height:1.9;}
+  .caption b{color:var(--gold);}
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">🔮</div>
+    <h1>星愿 · 塔罗</h1>
+    <div class="sub">今日心情加油站 · 真机预览</div>
+  </header>
+
+  <div class="phone">
+    <div class="side s-l1"></div>
+    <div class="side s-l2"></div>
+    <div class="side s-r1"></div>
+    <div class="screen">
+      <div class="island"></div>
+      <div class="statusbar">
+        <span class="time">9:41</span>
+        <span class="icos">▂▄▆ &nbsp;📶 &nbsp;🔋</span>
+      </div>
+      <iframe src="index.html" title="星愿·塔罗" allow="fullscreen"></iframe>
+      <div class="homebar"></div>
+    </div>
+  </div>
+
+  <div class="caption">
+    这就是一个<b>仿手机真机</b>的展示壳，里面跑的仍是原来的 <b>index.html</b><br/>
+    滑一滑、点一点，和手机里打开一模一样 ✨
+  </div>
+
+<script>
+  (function(){
+    for(var i=0;i<36;i++){
+      var s=document.createElement('div');s.className='star';
+      var sz=Math.random()*2.2+1;
+      s.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+(Math.random()*100)+'vw;top:'+(Math.random()*100)+'vh;animation-delay:'+(Math.random()*3)+'s;';
+      document.body.appendChild(s);
+    }
+  })();
+</script>
+</body>
+</html>
