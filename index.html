@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
 <meta name="theme-color" content="#1a1433" />
-<title>StarScript — 今日心情加油站</title>
+<title>星愿 · 塔罗 — 今日心情加油站</title>
 <style>
   :root{
     --bg:#1a1433;
@@ -409,7 +409,7 @@
   <!-- 启动页 -->
   <section class="screen active" id="splash">
     <div class="logo-orb"><span>🔮</span></div>
-    <div class="splash-title">StarScript</div>
+    <div class="splash-title">星愿 · 塔罗</div>
     <div class="splash-sub">你的今日心情加油站 ✨</div>
     <div class="splash-hint">正在为你准备今天的能量…</div>
   </section>
@@ -1601,7 +1601,7 @@ function makePoster(opts){
   ctx.fillStyle='rgba(244,241,255,.4)';ctx.font='22px sans-serif';
   ctx.fillText('本内容为趣味娱乐，不构成人生决策依据',W/2,H-130);
   ctx.fillStyle='rgba(246,196,83,.55)';ctx.font='22px sans-serif';
-  ctx.fillText('StarScript | 今日心情加油站',W/2,H-92);
+  ctx.fillText('星愿 · 塔罗 | 今日心情加油站',W/2,H-92);
   return cv.toDataURL('image/png');
 }
 function wrapText(ctx,text,cx,y,maxW,lh){
@@ -1640,7 +1640,7 @@ function posterFooter(ctx,W,H,date){
   ctx.fillStyle='rgba(244,241,255,.4)';ctx.font='22px sans-serif';
   ctx.fillText('本内容为趣味娱乐，不构成人生决策依据',W/2,H-132);
   ctx.fillStyle='rgba(246,196,83,.55)';ctx.font='22px sans-serif';
-  ctx.fillText('StarScript | 今日心情加油站',W/2,H-94);
+  ctx.fillText('星愿 · 塔罗 | 今日心情加油站',W/2,H-94);
 }
 function splitLines(ctx,text,maxW){
   let line='';const out=[];
@@ -1697,7 +1697,7 @@ async function savePoster(){
   if(isMobile() && navigator.share && navigator.canShare){
     try{
       if(navigator.canShare({files:[file]})){
-        await navigator.share({files:[file],title:'StarScript'});
+        await navigator.share({files:[file],title:'星愿·塔罗'});
         return;
       }
     }catch(e){ if(e && e.name==='AbortError')return; }
